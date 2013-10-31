@@ -7,7 +7,7 @@ import java.util.Collections;
  *
  * @author Raymond
  */
-public class BucketSort {
+public class BucketSort implements ISortingAlgorithm {
 
     private int bucketCount;
     
@@ -21,12 +21,13 @@ public class BucketSort {
      * @param array array to be sorted
      * @return array sorted in ascending order
      */
-    public int[] sort(int[] array) {
+    @Override
+    public void sort(int[] array) {
         if (bucketCount <= 0) {
             throw new IllegalArgumentException("Invalid bucket count");
         }
         if (array.length <= 1) {
-            return array; //trivially sorted
+            return;
         }
         int high = array[0];
         int low = array[0];
@@ -49,17 +50,14 @@ public class BucketSort {
             buckets[index].add(array[i]);
         }
 
-        int i;
-        ArrayList<Integer> hsl = new ArrayList<>();
-        for (i = 0; i < buckets.length; i++) {
-            Collections.sort(buckets[i]); //mergeSort
-            
+        int idx = 0;
+        for (int i = 0; i < buckets.length; i++) {
+            Collections.sort(buckets[i]); //mergeSort            
             for (int j = 0; j < buckets[i].size(); j++) { //merge the buckets
-
-                hsl.add(buckets[i].get(j));
-            }
-            
+                array[idx++] = buckets[i].get(j);
+            }            
         }
-        return array;
+        
+        
     }
 }

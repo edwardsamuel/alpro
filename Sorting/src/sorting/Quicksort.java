@@ -1,10 +1,11 @@
 package sorting;
 
-public class Quicksort {
+public class Quicksort implements ISortingAlgorithm {
 
     private int[] numbers;
     private int number;
 
+    @Override
     public void sort(int[] values) {
         // Check for empty or null array
         if (values == null || values.length == 0) {

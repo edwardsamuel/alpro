@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-public class CountingSort {
+public class CountingSort implements ISortingAlgorithm {
     
     public static int maxInt(int[] arr) {
         int max = Integer.MIN_VALUE;
@@ -24,6 +24,7 @@ public class CountingSort {
         return min;
     }
     
+    @Override
     public void sort(int[] arr) {
         int valMin = minInt(arr);
         int valMax = maxInt(arr);

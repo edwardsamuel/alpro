@@ -1,6 +1,6 @@
 package sorting;
 
-public class Heapsort {
+public class Heapsort implements ISortingAlgorithm {
 
     private int[] a;
     private int n;
@@ -39,6 +39,7 @@ public class Heapsort {
         a[j] = t;
     }
 
+    @Override
     public void sort(int[] a0) {
         a = a0;
         buildheap(a);
