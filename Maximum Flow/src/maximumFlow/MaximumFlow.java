@@ -1,26 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package maximumFlow;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-/**
- * This class provides to calculate the maximum flow in directed graphs using
- * the Ford-Fulkerson Algorithm.
- *
- * @author Ruben Beyer
- */
 public class MaximumFlow {
 
-    /**
-     * Main method just for testing
-     *
-     * @param args will be ignored
-     */
     public static void main(String[] args) {
         boolean finish = false;
         Scanner sc = new Scanner(System.in);
@@ -147,16 +132,6 @@ public class MaximumFlow {
 //        System.out.println(getFlowSize(flow, g, source));
     }
 
-    /**
-     * This method actually calculates the maximum flow by using the
-     * Ford-Fulkerson Algorithm.
-     *
-     * @param g The directed graph
-     * @param source The object identifying the source node of the flow
-     * @param sink The object identifying the sink node of the flow
-     * @return A HashMap for the edges, giving every edge in the graph a value
-     * which shows the part of the edge's capacity that is used by the flow
-     */
     static HashMap<Edge, Integer> getMaxFlow(DirectedGraph g, Object source,
             Object sink) {
         // The path from source to sink that is found in each iteration
@@ -212,15 +187,6 @@ public class MaximumFlow {
         return flow;
     }
 
-    /**
-     * This method gives the actual flow value by adding all flow values of the
-     * out leading edges of the source.
-     *
-     * @param flow A HashMap of the form like getMaxFlow produces them
-     * @param g The directed Graph
-     * @param source The object identifying the source node of the flow
-     * @return The value of the given flow
-     */
     static int getFlowSize(HashMap<Edge, Integer> flow, DirectedGraph g,
             Object source) {
         int maximumFlow = 0;
@@ -232,20 +198,6 @@ public class MaximumFlow {
         return maximumFlow;
     }
 
-    /**
-     * Simple breadth first search in the directed graph
-     *
-     * @param g The directed Graph
-     * @param start The object that identifying the start node of the search
-     * @param target The object that identifying the target node of the search
-     * @param flow A HashMap of the form like getMaxFlow produces them. If an
-     * edge has a value > 0 in it, it will also be used in the opposite
-     * direction. Also edges that have a value equal to its capacity will be
-     * ignored.
-     * @return A list of all edges of the found path in the order in which they
-     * are used, null if there is no path. If the start node equals the target
-     * node, an empty list is returned.
-     */
     static LinkedList<Edge> bfs(DirectedGraph g, Object start, Object target,
             HashMap<Edge, Integer> flow) {
         // The edge by which a node was reached.

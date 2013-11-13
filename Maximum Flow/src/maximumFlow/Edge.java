@@ -1,14 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package maximumFlow;
 
-/**
- * The edge class that is used for DirectedGraph
- * 
- * @author Ruben Beyer
- */
 public class Edge {
 
 	private final Object target;

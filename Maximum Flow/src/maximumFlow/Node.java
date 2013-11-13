@@ -1,15 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package maximumFlow;
 import java.util.ArrayList;
-
-/**
- * The node class that is used for DirectedGraph
- * 
- * @author Ruben Beyer
- */
 
 public class Node {
 
